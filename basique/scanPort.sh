@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo nmap -sS $1 | grep open | awk -F '/' '{ print "Port " $1 " is open" }'
+sudo nmap -sS $1 | awk -F '/' '/open/{ print "Port " $1 " is open" }'
