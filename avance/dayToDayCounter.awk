@@ -1,12 +1,10 @@
 BEGIN {
+    PROCINFO["sorted_in"] = "@val_num_desc"
     requestPerDay[0]=0
 }
 
-{
-    split($4,temArray,":");
-    requestDate=substr(temArray[1],2)
-
-    ++requestPerDay[requestDate]
+$2 {
+    ++requestPerDay[$2]
 }
 
 END {

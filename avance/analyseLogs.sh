@@ -14,4 +14,4 @@ cat $1 | awk -F ' ' -f code.awk
 
 echo ""
 
-cat $1 | awk -F ' ' -f dayToDayCounter.awk
+cat $1 | awk -F '\\[|:' -f dayToDayCounter.awk
